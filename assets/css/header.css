@@ -1,0 +1,1312 @@
+
+/* =========================================================
+   COUPONDEALS - CLEAN RESPONSIVE HEADER CSS
+   Desktop | Laptop | Tablet | Mobile
+   Theme: Navy #14213D / Orange #FCA311
+========================================================= */
+
+/* ==================== VARIABLES ==================== */
+
+:root {
+    --cf-navy: #14213D;
+    --cf-orange: #FCA311;
+    --cf-orange-dark: #E99500;
+    --cf-border: #E6EBF2;
+    --cf-muted: #738096;
+    --cf-text: #526076;
+    --cf-white: #FFFFFF;
+    --cf-surface: #F7F9FC;
+
+    --cf-header-height: 88px;
+    --cf-radius: 12px;
+    --cf-shadow: 0 15px 40px rgba(20, 33, 61, .12);
+}
+
+/* ==================== BASE ==================== */
+
+.cf-header,
+.cf-header *,
+.cf-topbar,
+.cf-topbar *,
+.cf-mobile-menu,
+.cf-mobile-menu * {
+    box-sizing: border-box;
+}
+
+.cf-header button,
+.cf-mobile-menu button {
+    font-family: inherit;
+}
+
+.cf-header a,
+.cf-mobile-menu a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.cf-header a:focus-visible,
+.cf-header button:focus-visible,
+.cf-mobile-menu a:focus-visible,
+.cf-mobile-menu button:focus-visible {
+    outline: 2px solid var(--cf-orange);
+    outline-offset: 3px;
+}
+
+/* ==================== ANNOUNCEMENT BAR ==================== */
+
+.cf-topbar {
+    position: relative;
+    z-index: 1030;
+    padding: 9px 0;
+    background: #101B32;
+    color: var(--cf-white);
+}
+
+.cf-topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.cf-announcement-window {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.cf-announcement-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px 12px;
+    width: 100%;
+    min-height: 24px;
+    text-align: center;
+}
+
+.cf-announcement-slide > span {
+    color: #E4EAF4;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.cf-announcement-slide > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--cf-orange);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.5;
+    transition: color .2s ease;
+}
+
+.cf-announcement-slide > a:hover {
+    color: var(--cf-white);
+}
+
+/* Announcement animations */
+
+.cf-announcement-slide.enter-next {
+    animation: cfSlideNext .4s ease both;
+}
+
+.cf-announcement-slide.enter-prev {
+    animation: cfSlidePrev .4s ease both;
+}
+
+@keyframes cfSlideNext {
+    from {
+        opacity: 0;
+        transform: translateX(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes cfSlidePrev {
+    from {
+        opacity: 0;
+        transform: translateX(-16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==================== MAIN HEADER ==================== */
+
+.cf-header {
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+    width: 100%;
+    background: rgba(255, 255, 255, .98);
+    border-bottom: 1px solid var(--cf-border);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: box-shadow .3s ease;
+}
+
+.cf-header.scrolled {
+    box-shadow: 0 10px 32px rgba(20, 33, 61, .10);
+}
+
+.cf-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-height: var(--cf-header-height);
+    transition: min-height .3s ease;
+}
+
+.cf-header.scrolled .cf-header-inner {
+    min-height: 76px;
+}
+
+/* ==================== LOGO ==================== */
+
+.cf-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    min-width: 0;
+    text-decoration: none;
+}
+
+.cf-logo-image {
+    display: block;
+    width: 140px;
+    height: 82px;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform .25s ease;
+}
+
+.cf-logo:hover .cf-logo-image {
+    transform: scale(1.035);
+}
+
+/* Legacy logo support */
+
+.cf-logo-symbol {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: var(--cf-navy);
+}
+
+.cf-logo-copy {
+    display: flex;
+    flex-direction: column;
+}
+
+.cf-logo-name {
+    color: var(--cf-navy);
+    font-family: "Manrope", sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.cf-logo-name span {
+    color: #CA8000;
+}
+
+.cf-logo-name b {
+    color: var(--cf-orange);
+}
+
+.cf-logo-copy small {
+    margin-top: 4px;
+    color: #8793A2;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .8px;
+}
+
+/* ==================== DESKTOP NAVIGATION ==================== */
+
+.cf-header .cf-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    min-width: 0;
+    margin: 0 auto;
+}
+
+.cf-header .cf-nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 5px;
+    padding: 12px 7px;
+    border: 0;
+    background: transparent;
+    color: var(--cf-text);
+    text-decoration: none;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    white-space: nowrap;
+    transition: color .2s ease;
+}
+
+.cf-header .cf-nav-link:hover,
+.cf-header .cf-nav-link.active {
+    color: var(--cf-navy);
+}
+
+/* Navigation underline */
+
+.cf-header .cf-nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 7px;
+    right: 7px;
+    height: 2px;
+    background: var(--cf-orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+}
+
+.cf-header .cf-nav-link:hover::after,
+.cf-header .cf-nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* ==================== CATEGORIES ==================== */
+
+.cf-header .cf-category {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    min-width: 0;
+}
+
+.cf-header .cf-category-nav {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 3px;
+    white-space: nowrap;
+}
+
+.cf-header .cf-category-main-link {
+    padding-right: 2px;
+    text-decoration: none;
+}
+
+/* Dropdown arrow */
+
+.cf-header .cf-category-arrow,
+.cf-header .cf-category-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 30px;
+    min-width: 20px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--cf-navy);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.cf-header .cf-category-arrow:hover,
+.cf-header .cf-category-toggle:hover {
+    color: #B97910;
+}
+
+.cf-header .cf-category-arrow i,
+.cf-header .cf-category-toggle i {
+    display: inline-block;
+    line-height: 1;
+    transition: transform .25s ease;
+}
+
+.cf-header .cf-category-arrow[aria-expanded="true"] i,
+.cf-header .cf-category-toggle[aria-expanded="true"] i,
+.cf-header .cf-category.open .cf-category-arrow i,
+.cf-header .cf-category.open .cf-category-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Categories dropdown */
+
+.cf-header .cf-category-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    z-index: 1100;
+    display: block;
+    width: 540px;
+    max-width: calc(100vw - 30px);
+    max-height: min(72vh, 600px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    border: 1px solid var(--cf-border);
+    border-radius: 17px;
+    background: var(--cf-white);
+    box-shadow: 0 18px 45px rgba(20, 33, 61, .14);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, 8px);
+    transition:
+        opacity .2s ease,
+        visibility .2s ease,
+        transform .2s ease;
+    scrollbar-width: thin;
+}
+
+/* Prevent hover gap */
+
+.cf-header .cf-category-menu::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -14px;
+    height: 14px;
+}
+
+/* Dropdown open states */
+
+.cf-header .cf-category.open > .cf-category-menu,
+.cf-header .cf-category.is-open > .cf-category-menu,
+.cf-header .cf-category:focus-within > .cf-category-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+}
+
+/* Dropdown header */
+
+.cf-header .cf-category-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid #E9EDF3;
+    background: #F9FAFC;
+}
+
+.cf-header .cf-category-all-link,
+.cf-header .cf-all-categories-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--cf-navy);
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.cf-header .cf-category-all-link i {
+    color: #B97910;
+}
+
+.cf-header .cf-category-all-link:hover,
+.cf-header .cf-all-categories-link:hover {
+    color: #B97910;
+}
+
+/* Two-column category grid */
+
+.cf-header .cf-category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 0;
+    width: 100%;
+    padding: 16px 24px 22px;
+}
+
+.cf-header .cf-category-link {
+    position: relative;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    padding: 9px 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    color: var(--cf-navy);
+    text-decoration: none;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    white-space: normal;
+    transition: color .2s ease;
+}
+
+.cf-header .cf-category-link::before {
+    content: none;
+}
+
+.cf-header .cf-category-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    height: 2px;
+    background: var(--cf-orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+}
+
+.cf-header .cf-category-link:hover,
+.cf-header .cf-category-link:focus-visible {
+    color: #B97910;
+}
+
+.cf-header .cf-category-link:hover::after,
+.cf-header .cf-category-link:focus-visible::after {
+    transform: scaleX(1);
+}
+
+/* ==================== HEADER ACTIONS ==================== */
+
+.cf-actions {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 8px;
+}
+
+.cf-icon-button,
+.cf-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    padding: 0;
+    border: 1px solid var(--cf-border);
+    border-radius: 12px;
+    background: #F7F8FA;
+    color: var(--cf-navy);
+    font-size: 19px;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+.cf-icon-button:hover,
+.cf-icon-button[aria-expanded="true"],
+.cf-menu-toggle:hover {
+    background: #FFF2DC;
+    border-color: var(--cf-orange);
+    color: var(--cf-navy);
+}
+
+/* Search icon */
+
+#cfSearchToggle {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+#cfSearchToggle i {
+    display: block;
+    line-height: 1;
+}
+
+/* Account icon linking to login.php */
+
+.cf-account {
+    position: relative;
+}
+
+.cf-login-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cf-login-icon:hover,
+.cf-login-icon:focus-visible {
+    color: var(--cf-navy);
+    text-decoration: none;
+}
+
+/* ==================== ADVERTISE BUTTON ==================== */
+
+.cf-advertise {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 10px 17px;
+    overflow: hidden;
+    border: 1px solid var(--cf-orange);
+    border-radius: 24px;
+    background: var(--cf-orange);
+    color: var(--cf-navy);
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+/* Solid-color shine animation, no gradient */
+
+.cf-advertise::before {
+    content: "";
+    position: absolute;
+    top: -70%;
+    left: -60%;
+    width: 35%;
+    height: 240%;
+    background: rgba(255, 255, 255, .28);
+    transform: translateX(-180%) rotate(25deg);
+    pointer-events: none;
+}
+
+.cf-advertise:hover,
+.cf-advertise:focus-visible {
+    background: var(--cf-orange-dark);
+    border-color: var(--cf-orange-dark);
+    color: var(--cf-navy);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(252, 163, 17, .24);
+}
+
+.cf-advertise:hover::before,
+.cf-advertise:focus-visible::before {
+    animation: cfAdvertiseShine .7s ease-out forwards;
+}
+
+@keyframes cfAdvertiseShine {
+    from {
+        transform: translateX(-180%) rotate(25deg);
+    }
+
+    to {
+        transform: translateX(650%) rotate(25deg);
+    }
+}
+
+.cf-advertise > span {
+    position: relative;
+    z-index: 1;
+}
+
+.cf-advertise-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    line-height: 1;
+    transition: transform .25s ease;
+}
+
+.cf-advertise:hover .cf-advertise-arrow {
+    transform: translate(3px, -3px);
+}
+
+/* ==================== SEARCH PANEL ==================== */
+
+.cf-search-panel {
+    display: none;
+    width: 100%;
+    padding: 4px 0 20px;
+}
+
+.cf-search-panel.open {
+    display: flex;
+    justify-content: center;
+    animation: cfSearchAppear .25s ease;
+}
+
+@keyframes cfSearchAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-9px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cf-search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 6px;
+    border: 1px solid #E4E9F0;
+    border-radius: 12px;
+    background: var(--cf-white);
+    box-shadow: 0 8px 25px rgba(20, 33, 61, .07);
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.cf-search-form:focus-within {
+    border-color: var(--cf-orange);
+    box-shadow: 0 0 0 4px rgba(252, 163, 17, .12);
+}
+
+.cf-search-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: #F6F7F9;
+    color: #A76800;
+    font-size: 18px;
+}
+
+.cf-search-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 2px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--cf-navy);
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+}
+
+.cf-search-form input::placeholder {
+    color: #8A96A8;
+}
+
+.cf-search-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 15px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--cf-orange);
+    color: var(--cf-navy);
+    font-size: 14px;
+    font-weight: 800;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background .25s ease;
+}
+
+.cf-search-submit:hover {
+    background: var(--cf-orange-dark);
+}
+
+.cf-search-close {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 8px;
+    background: #F3F5F8;
+    color: #68758A;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cf-search-close:hover {
+    background: #E9EDF3;
+    color: var(--cf-navy);
+}
+
+/* ==================== SEARCH SUGGESTIONS ==================== */
+
+.cf-search-suggestions {
+    display: none;
+    position: absolute;
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+    z-index: 1150;
+    max-height: 290px;
+    overflow-y: auto;
+    padding: 7px;
+    border: 1px solid var(--cf-border);
+    border-radius: 12px;
+    background: var(--cf-white);
+    box-shadow: 0 18px 40px rgba(20, 33, 61, .13);
+}
+
+.cf-search-suggestions.show {
+    display: block;
+}
+
+.cf-suggestion {
+    display: block;
+    padding: 11px 14px;
+    border-radius: 8px;
+    color: var(--cf-navy);
+    text-decoration: none;
+}
+
+.cf-suggestion:hover,
+.cf-suggestion:focus-visible {
+    background: #FFF3DC;
+}
+
+.cf-suggestion strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.cf-suggestion small {
+    color: var(--cf-muted);
+    font-size: 12px;
+}
+
+/* ==================== MOBILE MENU ==================== */
+
+.cf-menu-toggle {
+    display: none;
+}
+
+.cf-mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    background: rgba(9, 18, 37, .58);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+}
+
+.cf-mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.cf-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1060;
+    display: flex;
+    flex-direction: column;
+    width: min(390px, 92vw);
+    max-width: 100%;
+    background: var(--cf-white);
+    box-shadow: -14px 0 45px rgba(0, 0, 0, .12);
+    transform: translateX(100%);
+    transition: transform .35s ease;
+}
+
+.cf-mobile-menu.active {
+    transform: translateX(0);
+}
+
+.cf-mobile-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--cf-border);
+}
+
+.cf-mobile-head .cf-logo-image {
+    width: 110px;
+    height: 88px;
+    object-fit: contain;
+}
+
+.cf-mobile-head button {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 9px;
+    background: #F2F4F7;
+    color: var(--cf-navy);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cf-mobile-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px;
+}
+
+.cf-mobile-label {
+    display: block;
+    margin-bottom: 12px;
+    color: #919BAD;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+}
+
+.cf-mobile-link,
+.cf-mobile-categories a {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 9px;
+    color: #536075;
+    text-decoration: none;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+.cf-mobile-link:hover,
+.cf-mobile-link.active,
+.cf-mobile-categories a:hover {
+    background: #FFF3DC;
+    color: var(--cf-navy);
+}
+
+.cf-mobile-categories {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.cf-mobile-divider {
+    height: 1px;
+    margin: 20px 0;
+    background: var(--cf-border);
+}
+
+.cf-mobile-all-categories,
+.cf-mobile-login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cf-mobile-all-categories {
+    color: #B97910;
+    font-weight: 800;
+}
+
+.cf-mobile-advertise {
+    display: flex;
+    width: 100%;
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+body.cf-menu-open {
+    overflow: hidden;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+========================================================= */
+
+/* ==================== LARGE DESKTOP ==================== */
+/* 1400px and above: full navigation */
+
+@media (min-width: 1400px) {
+    .cf-header .cf-nav {
+        gap: 12px;
+    }
+
+    .cf-header .cf-nav-link {
+        font-size: 16px;
+        padding: 12px 8px;
+    }
+
+    .cf-logo-image {
+        width: 145px;
+        height: 85px;
+    }
+}
+
+/* ==================== MEDIUM DESKTOP ==================== */
+/* 1201px - 1399px */
+
+@media (min-width: 1201px) and (max-width: 1399px) {
+    .cf-header-inner {
+        gap: 10px;
+    }
+
+    .cf-logo-image {
+        width: 115px;
+        height: 75px;
+    }
+
+    .cf-header .cf-nav {
+        gap: 3px;
+    }
+
+    .cf-header .cf-nav-link {
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+
+    .cf-header .cf-advertise {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    .cf-header .cf-category-grid {
+        column-gap: 18px;
+    }
+}
+
+/* ==================== TABLET & SMALL LAPTOP ==================== */
+/* Up to 1200px */
+
+@media (max-width: 1200px) {
+    .cf-header .cf-nav {
+        display: none;
+    }
+
+    .cf-header .cf-menu-toggle {
+        display: inline-flex;
+    }
+
+    .cf-header-inner {
+        min-height: 78px;
+    }
+
+    .cf-header.scrolled .cf-header-inner {
+        min-height: 72px;
+    }
+
+    .cf-logo-image {
+        width: 125px;
+        height: 75px;
+    }
+
+    .cf-actions {
+        margin-left: auto;
+    }
+}
+
+/* ==================== MOBILE ==================== */
+/* Up to 767px */
+
+@media (max-width: 767px) {
+    .cf-topbar {
+        padding: 8px 0;
+    }
+
+    .cf-announcement-slide {
+        gap: 4px 8px;
+    }
+
+    .cf-announcement-slide > span,
+    .cf-announcement-slide > a {
+        font-size: 12px;
+    }
+
+    .cf-header-inner,
+    .cf-header.scrolled .cf-header-inner {
+        min-height: 72px;
+        gap: 8px;
+    }
+
+    .cf-logo-image {
+        width: 105px;
+        height: 66px;
+    }
+
+    .cf-actions {
+        gap: 6px;
+    }
+
+    .cf-icon-button,
+    .cf-menu-toggle {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 18px;
+    }
+
+    #cfSearchToggle {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    /* Advertise appears inside mobile menu */
+    .cf-actions > .cf-advertise {
+        display: none;
+    }
+
+    .cf-search-panel {
+        padding: 3px 0 15px;
+    }
+
+    .cf-search-form {
+        max-width: 100%;
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .cf-search-icon {
+        width: 32px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .cf-search-form input {
+        padding: 8px 0;
+        font-size: 14px;
+    }
+
+    .cf-search-submit {
+        gap: 0;
+        padding: 10px;
+    }
+
+    .cf-search-submit span {
+        display: none;
+    }
+
+    .cf-search-close {
+        width: 30px;
+        height: 32px;
+    }
+
+    .cf-mobile-head {
+        padding: 12px 18px;
+    }
+
+    .cf-mobile-body {
+        padding: 18px;
+    }
+
+    .cf-mobile-link,
+    .cf-mobile-categories a {
+        font-size: 14px;
+    }
+}
+
+/* ==================== SMALL MOBILE ==================== */
+/* Up to 390px */
+
+@media (max-width: 390px) {
+    .cf-header-inner {
+        gap: 5px;
+    }
+
+    .cf-logo-image {
+        width: 90px;
+        height: 58px;
+    }
+
+    .cf-actions {
+        gap: 4px;
+    }
+
+    .cf-icon-button,
+    .cf-menu-toggle {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 17px;
+    }
+
+    #cfSearchToggle {
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+    }
+
+    .cf-mobile-categories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cf-announcement-slide > span,
+    .cf-announcement-slide > a {
+        font-size: 11px;
+    }
+}
+
+/* ==================== VERY SMALL MOBILE ==================== */
+/* Up to 340px */
+
+@media (max-width: 340px) {
+    .cf-logo-image {
+        width: 80px;
+        height: 54px;
+    }
+
+    .cf-header-inner {
+        gap: 3px;
+    }
+
+    .cf-actions {
+        gap: 3px;
+    }
+
+    .cf-icon-button,
+    .cf-menu-toggle {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+    }
+
+    #cfSearchToggle {
+        flex: 0 0 34px;
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        min-height: 34px;
+    }
+
+    .cf-mobile-categories {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .cf-header *,
+    .cf-mobile-menu,
+    .cf-mobile-overlay,
+    .cf-announcement-slide {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* Prevent header navigation overlap */
+
+@media (min-width: 1201px) and (max-width: 1399px) {
+    .cf-header .cf-nav {
+        gap: 3px;
+    }
+
+    .cf-header .cf-nav-link {
+        font-size: 14px;
+        padding-inline: 5px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cf-header .cf-nav {
+        display: none !important;
+    }
+
+    .cf-header .cf-menu-toggle {
+        display: inline-flex !important;
+    }
+}
+
+/* CouponDeals Logo Size - Responsive */
+
+.cf-header .cf-logo-image {
+    width: 250px;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+    .cf-header .cf-logo-image {
+        width: 150px;
+        height: 88px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .cf-header .cf-logo-image {
+        width: 130px;
+        height: 76px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 390px) {
+    .cf-header .cf-logo-image {
+        width: 110px;
+        height: 65px;
+    }
+}

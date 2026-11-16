@@ -1,0 +1,1060 @@
+
+/* ==================================================
+   COUPONFLICKER — REFINED PREMIUM FOOTER
+================================================== */
+
+.cfx-footer {
+    --cfx-dark: #101a2d;
+    --cfx-darker: #0b1424;
+    --cfx-orange: #FCA311;
+    --cfx-muted: #a4b1c4;
+    --cfx-border: rgba(255,255,255,.11);
+
+    background: var(--cfx-dark);
+    color: #fff;
+    font-family: "DM Sans", sans-serif;
+}
+
+.cfx-footer *,
+.cfx-footer *::before,
+.cfx-footer *::after {
+    box-sizing: border-box;
+}
+
+/* NEWSLETTER */
+
+.cfx-newsletter {
+    position: relative;
+    padding: 64px 0;
+    background: #17243d;
+    border-bottom: 1px solid var(--cfx-border);
+    overflow: hidden;
+}
+
+.cfx-newsletter::after {
+    content: "";
+    position: absolute;
+    right: -160px;
+    top: -240px;
+    width: 480px;
+    height: 480px;
+    border: 1px solid rgba(252,163,17,.10);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.cfx-newsletter-layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.cfx-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 19px;
+    color: var(--cfx-orange);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.cfx-eyebrow-line {
+    width: 26px;
+    height: 2px;
+    background: var(--cfx-orange);
+}
+
+.cfx-newsletter-copy h2 {
+    margin: 0;
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(28px, 3vw, 43px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.cfx-newsletter-copy h2 span {
+    color: var(--cfx-orange);
+}
+
+.cfx-newsletter-copy p {
+    max-width: 460px;
+    margin: 18px 0 0;
+    color: #b1bfd1;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.cfx-newsletter-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px;
+    min-height: 63px;
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 25px;
+    background: #fff;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+    transition: box-shadow .25s;
+}
+
+.cfx-newsletter-form:focus-within {
+    box-shadow: 0 0 0 4px rgba(252,163,17,.15);
+}
+
+.cfx-input-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    color: #8b98a9;
+    font-size: 20px;
+}
+
+.cfx-newsletter-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #14213D;
+    font-size: 14px;
+}
+
+.cfx-newsletter-form input::placeholder {
+    color: #8995a6;
+}
+
+.cfx-newsletter-form button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 47px;
+    padding: 13px 20px;
+    border: 0;
+    border-radius: 25px;
+    background: var(--cfx-orange);
+    color: #14213D;
+    font-size: 14px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: background .25s, transform .25s;
+}
+
+.cfx-newsletter-form button:hover {
+    background: #ea9504;
+}
+
+.cfx-newsletter-form button i {
+    display: inline-block;
+    transition: transform .25s;
+}
+
+.cfx-newsletter-form button:hover i {
+    transform: translate(2px,-2px);
+}
+
+.cfx-newsletter-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 13px;
+    color: #93a3b8;
+    font-size: 14px;
+}
+
+.cfx-newsletter-note i {
+    color: #d4a24d;
+}
+
+.cfx-newsletter-feedback {
+    margin: 0;
+    font-size: 12px;
+}
+
+.cfx-newsletter-feedback:not(:empty) {
+    margin-top: 10px;
+}
+
+.cfx-newsletter-feedback.error {
+    color: #ffb9b9;
+}
+
+.cfx-newsletter-feedback.info {
+    color: #ffd18a;
+}
+
+/* MAIN COLUMNS */
+
+.cfx-main {
+    padding: 74px 0 38px;
+    background:
+        radial-gradient(
+            ellipse at 0% 0%,
+            rgba(252,163,17,.035),
+            transparent 42%
+        ),
+        var(--cfx-dark);
+}
+
+.cfx-columns {
+    display: grid;
+    grid-template-columns: 1.65fr .9fr 1.15fr 1.2fr;
+    gap: 45px;
+}
+
+/* BRAND */
+
+.cfx-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+}
+
+.cfx-brand-icon {
+    display: grid;
+    place-items: center;
+    width: 49px;
+    height: 49px;
+    flex-shrink: 0;
+    border: 1px solid rgba(252,163,17,.17);
+    border-radius: 14px;
+    background: #24344e;
+    transform: rotate(-5deg);
+    transition: transform .3s, border-color .3s;
+}
+
+.cfx-brand:hover .cfx-brand-icon {
+    transform: rotate(0);
+    border-color: var(--cfx-orange);
+}
+
+.cfx-brand-word {
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1.3px;
+    white-space: nowrap;
+}
+
+.cfx-brand-word span,
+.cfx-brand-word b {
+    color: var(--cfx-orange);
+}
+
+.cfx-brand-description {
+    max-width: 320px;
+    margin: 24px 0;
+    color: var(--cfx-muted);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.cfx-socials {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.cfx-socials a {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--cfx-border);
+    border-radius: 10px;
+    background: rgba(255,255,255,.035);
+    color: #c0cad8;
+    font-size: 16px;
+    text-decoration: none;
+    transition:
+        background .25s,
+        border-color .25s,
+        color .25s,
+        transform .25s;
+}
+
+.cfx-socials a:hover,
+.cfx-socials a:focus-visible {
+    background: var(--cfx-orange);
+    border-color: var(--cfx-orange);
+    color: #14213D;
+    transform: translateY(-3px);
+}
+
+/* LINK COLUMNS */
+
+.cfx-link-column h3 {
+    position: relative;
+    margin: 8px 0 29px;
+    padding-bottom: 15px;
+    color: #f8fafc;
+    font-family: "Manrope",sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -.1px;
+}
+
+.cfx-link-column h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 29px;
+    border-radius: 2px;
+    background: var(--cfx-orange);
+}
+
+.cfx-link-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cfx-link-column li {
+    margin: 0;
+    padding: 0;
+}
+
+.cfx-link-column a {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    color: var(--cfx-muted);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color .25s;
+}
+
+.cfx-link-column a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--cfx-orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s;
+}
+
+.cfx-link-column a:hover,
+.cfx-link-column a:focus-visible {
+    color: var(--cfx-orange);
+}
+
+.cfx-link-column a:hover::after,
+.cfx-link-column a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+/* EDITORIAL STATEMENT */
+
+.cfx-footer-statement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 70px;
+}
+
+.cfx-statement-line {
+    height: 1px;
+    flex: 1;
+    background: var(--cfx-border);
+}
+
+.cfx-footer-statement p {
+    margin: 0;
+    color: #f0f3f9;
+    font-family: "Manrope",sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.cfx-footer-statement p span {
+    color: var(--cfx-orange);
+    font-weight: 600;
+}
+
+/* COPYRIGHT BAR */
+
+.cfx-bottom {
+    background: var(--cfx-darker);
+    border-top: 1px solid rgba(255,255,255,.07);
+}
+
+.cfx-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 80px;
+    padding: 18px 0;
+}
+
+.cfx-bottom-inner > p {
+    margin: 0;
+    color: #95a4b8;
+    font-size: 12px;
+}
+
+.cfx-bottom-inner > p strong {
+    color: #fff;
+}
+
+.cfx-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+
+.cfx-legal-links a {
+    color: #a1afc1;
+    font-size: 12px;
+    text-decoration: none;
+    transition: color .25s;
+}
+
+.cfx-legal-links a:hover {
+    color: var(--cfx-orange);
+}
+
+.cfx-top-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 12px 9px 14px;
+    border: 1px solid var(--cfx-border);
+    border-radius: 9px;
+    background: rgba(255,255,255,.035);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background .25s, color .25s;
+}
+
+.cfx-top-button i {
+    font-size: 15px;
+}
+
+.cfx-top-button:hover {
+    background: var(--cfx-orange);
+    color: #14213D;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1199px) {
+    .cfx-columns {
+        grid-template-columns: 1.35fr 1fr 1fr 1fr;
+        gap: 26px;
+    }
+
+    .cfx-brand-word {
+        font-size: 20px;
+    }
+
+    .cfx-newsletter-layout {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 991px) {
+    .cfx-newsletter {
+        padding: 54px 0;
+    }
+
+    .cfx-newsletter-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .cfx-newsletter-action {
+        max-width: 600px;
+    }
+
+    .cfx-columns {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 45px;
+    }
+
+    .cfx-bottom-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .cfx-newsletter {
+        padding: 43px 0;
+    }
+
+    .cfx-newsletter-copy h2 {
+        font-size: 30px;
+    }
+
+    .cfx-newsletter-copy p {
+        font-size: 12px;
+    }
+
+    .cfx-newsletter-form {
+        gap: 4px;
+        padding: 5px;
+        min-height: 56px;
+    }
+
+    .cfx-input-icon {
+        width: 28px;
+    }
+
+    .cfx-newsletter-form input {
+        font-size: 14px;
+    }
+
+    .cfx-newsletter-form button {
+        padding: 12px;
+        min-height: 43px;
+    }
+
+    .cfx-newsletter-form button span {
+        display: none;
+    }
+
+    .cfx-main {
+        padding: 52px 0 32px;
+    }
+
+    .cfx-columns {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 33px 17px;
+    }
+
+    .cfx-brand-column {
+        grid-column: 1 / -1;
+    }
+
+    .cfx-link-column h3 {
+        font-size: 14px;
+        margin-bottom: 22px;
+    }
+
+    .cfx-link-column ul {
+        gap: 12px;
+    }
+
+    .cfx-link-column a {
+        font-size: 12px;
+    }
+
+    .cfx-footer-statement {
+        margin-top: 43px;
+        gap: 12px;
+    }
+
+    .cfx-footer-statement p {
+        font-size: 12px;
+        white-space: normal;
+        max-width: 240px;
+    }
+
+    .cfx-bottom-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 17px;
+    }
+
+    .cfx-legal-links {
+        gap: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cfx-footer *,
+    .cfx-footer *::before,
+    .cfx-footer *::after {
+        transition-duration: .01ms !important;
+    }
+}
+
+/* ==========================================
+   COUPONFLICKER - COMPACT PREMIUM FOOTER
+========================================== */
+
+/* Newsletter height reduce */
+.cfx-newsletter {
+    padding: 35px 0;
+}
+
+.cfx-newsletter-layout {
+    gap: 35px;
+}
+
+.cfx-eyebrow {
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+.cfx-newsletter-copy h2 {
+    font-size: clamp(24px, 2.5vw, 32px);
+    line-height: 1.2;
+}
+
+.cfx-newsletter-copy p {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.cfx-newsletter-form {
+    min-height: 52px;
+    padding: 5px;
+}
+
+.cfx-newsletter-form button {
+    min-height: 40px;
+    padding: 10px 16px;
+}
+
+/* Main footer spacing */
+.cfx-main {
+    padding: 42px 0 24px;
+}
+
+.cfx-columns {
+    gap: 30px;
+}
+
+.cfx-brand-icon {
+    width: 42px;
+    height: 42px;
+}
+
+.cfx-brand-word {
+    font-size: 21px;
+}
+
+.cfx-brand-description {
+    margin: 14px 0 17px;
+    line-height: 1.7;
+}
+
+.cfx-socials a {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+}
+
+/* Footer headings and links */
+.cfx-link-column h3 {
+    margin: 5px 0 18px;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+.cfx-link-column ul {
+    gap: 9px;
+}
+
+.cfx-link-column a {
+    font-size: 12px;
+}
+
+/* Make bottom statement smaller */
+.cfx-footer-statement {
+    margin-top: 32px;
+    gap: 15px;
+}
+
+.cfx-footer-statement p {
+    font-size: 12px;
+}
+
+/* Copyright bar */
+.cfx-bottom-inner {
+    min-height: 56px;
+    padding: 12px 0;
+}
+
+.cfx-bottom-inner > p,
+.cfx-legal-links a {
+    font-size: 10px;
+}
+
+.cfx-top-button {
+    padding: 7px 10px;
+    font-size: 10px;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .cfx-newsletter {
+        padding: 32px 0;
+    }
+
+    .cfx-main {
+        padding: 35px 0 22px;
+    }
+
+    .cfx-columns {
+        gap: 26px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+    .cfx-newsletter {
+        padding: 27px 0;
+    }
+
+    .cfx-newsletter-layout {
+        gap: 16px;
+    }
+
+    .cfx-newsletter-copy h2 {
+        font-size: 23px;
+    }
+
+    .cfx-main {
+        padding: 30px 0 20px;
+    }
+
+    .cfx-columns {
+        gap: 23px 14px;
+    }
+
+    .cfx-brand-description {
+        margin: 12px 0;
+    }
+
+    .cfx-link-column h3 {
+        margin-bottom: 15px;
+    }
+
+    .cfx-link-column ul {
+        gap: 8px;
+    }
+
+    .cfx-link-column a {
+        font-size: 11px;
+    }
+
+    .cfx-footer-statement {
+        margin-top: 24px;
+    }
+
+    .cfx-bottom-inner {
+        padding: 14px 0;
+        gap: 12px;
+    }
+}
+
+
+/* ==========================================
+   COUPONFLICKER - REFINED FOOTER COLORS
+   DARK NAVY + WHITE + MINIMAL ORANGE
+========================================== */
+
+.cfx-footer {
+    --cfx-dark: #111B2E;
+    --cfx-darker: #0B1424;
+    --cfx-orange: #FCA311;
+    --cfx-muted: #ABB7C8;
+}
+
+/* Newsletter */
+.cfx-newsletter {
+    background: #172238;
+}
+
+.cfx-eyebrow {
+    color: #B7C5D7;
+}
+
+.cfx-eyebrow-line {
+    background: #6D7B90;
+}
+
+.cfx-newsletter-copy h2 {
+    color: #FFFFFF;
+}
+
+/* Remove orange from highlighted heading */
+.cfx-newsletter-copy h2 span {
+    color: #FFFFFF;
+}
+
+.cfx-newsletter-copy p {
+    color: #B2BED0;
+}
+
+.cfx-newsletter-note,
+.cfx-newsletter-note i {
+    color: #99A8BA;
+}
+
+/* Newsletter button - keep orange */
+.cfx-newsletter-form button {
+    background: #FCA311;
+    color: #14213D;
+}
+
+.cfx-newsletter-form button:hover {
+    background: #E9960A;
+}
+
+/* Main footer */
+.cfx-main {
+    background: #111B2E;
+}
+
+/* Brand logo text */
+.cfx-brand-word {
+    color: #FFFFFF;
+}
+
+.cfx-brand-word span {
+    color: #FFFFFF;
+}
+
+.cfx-brand-word b {
+    color: #FCA311;
+}
+
+/* Logo icon */
+.cfx-brand-icon {
+    background: #23344D;
+    border-color: rgba(255,255,255,.12);
+}
+
+.cfx-brand:hover .cfx-brand-icon {
+    border-color: rgba(252,163,17,.5);
+}
+
+/* Footer column titles */
+.cfx-link-column h3 {
+    color: #FFFFFF;
+}
+
+/* Muted heading underline */
+.cfx-link-column h3::after {
+    background: #64748B;
+    width: 26px;
+}
+
+/* Footer links */
+.cfx-link-column a {
+    color: #ABB7C8;
+}
+
+.cfx-link-column a:hover,
+.cfx-link-column a:focus-visible {
+    color: #FFFFFF;
+}
+
+/* Underline on hover */
+.cfx-link-column a::after {
+    background: #FCA311;
+}
+
+/* Social media */
+.cfx-socials a {
+    background: rgba(255,255,255,.04);
+    border-color: rgba(255,255,255,.12);
+    color: #C2CDDB;
+}
+
+.cfx-socials a:hover {
+    background: #263952;
+    border-color: #52657E;
+    color: #FFFFFF;
+}
+
+/* Footer statement */
+.cfx-footer-statement p {
+    color: #E9EEF6;
+}
+
+.cfx-footer-statement p span {
+    color: #AEBBD0;
+}
+
+/* Copyright */
+.cfx-bottom {
+    background: #0B1424;
+}
+
+.cfx-bottom-inner > p strong {
+    color: #FFFFFF;
+}
+
+.cfx-legal-links a:hover {
+    color: #FFFFFF;
+}
+
+/* Back to top */
+.cfx-top-button:hover {
+    background: #263952;
+    color: #FFFFFF;
+    border-color: #52657E;
+}
+
+/* Accessibility */
+.cfx-footer a:focus-visible,
+.cfx-footer button:focus-visible {
+    outline: 2px solid #FCA311;
+    outline-offset: 3px;
+}
+
+/* ==========================================
+   COUPONDEALS - MODERN FOOTER FONT SIZES
+   Desktop, Tablet & Mobile Responsive
+========================================== */
+
+/* Newsletter */
+.cfx-footer .cfx-eyebrow {
+    font-size: 13px;
+}
+
+.cfx-footer .cfx-newsletter-copy h2 {
+    font-size: clamp(28px, 2.8vw, 38px);
+    line-height: 1.3;
+}
+
+.cfx-footer .cfx-newsletter-copy p {
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.cfx-footer .cfx-newsletter-form input {
+    font-size: 15px;
+}
+
+.cfx-footer .cfx-newsletter-form button {
+    font-size: 15px;
+}
+
+.cfx-footer .cfx-newsletter-note,
+.cfx-footer .cfx-newsletter-feedback {
+    font-size: 14px;
+}
+
+/* Footer brand */
+.cfx-footer .cfx-brand-word {
+    font-size: 25px;
+}
+
+.cfx-footer .cfx-brand-description {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Footer columns */
+.cfx-footer .cfx-link-column h3 {
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.cfx-footer .cfx-link-column a {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Bottom section */
+.cfx-footer .cfx-footer-statement p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.cfx-footer .cfx-bottom-inner > p,
+.cfx-footer .cfx-legal-links a {
+    font-size: 14px;
+}
+
+.cfx-footer .cfx-top-button {
+    font-size: 14px;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .cfx-footer .cfx-newsletter-copy h2 {
+        font-size: 30px;
+    }
+
+    .cfx-footer .cfx-link-column h3 {
+        font-size: 16px;
+    }
+
+    .cfx-footer .cfx-link-column a {
+        font-size: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+    .cfx-footer .cfx-eyebrow {
+        font-size: 12px;
+    }
+
+    .cfx-footer .cfx-newsletter-copy h2 {
+        font-size: 27px;
+    }
+
+    .cfx-footer .cfx-newsletter-copy p {
+        font-size: 15px;
+    }
+
+    .cfx-footer .cfx-newsletter-form input {
+        font-size: 15px;
+    }
+
+    .cfx-footer .cfx-brand-word {
+        font-size: 23px;
+    }
+
+    .cfx-footer .cfx-brand-description {
+        font-size: 15px;
+    }
+
+    .cfx-footer .cfx-link-column h3 {
+        font-size: 16px;
+    }
+
+    .cfx-footer .cfx-link-column a {
+        font-size: 14px;
+    }
+
+    .cfx-footer .cfx-footer-statement p {
+        font-size: 14px;
+    }
+
+    .cfx-footer .cfx-bottom-inner > p,
+    .cfx-footer .cfx-legal-links a {
+        font-size: 13px;
+    }
+
+    .cfx-footer .cfx-top-button {
+        font-size: 13px;
+    }
+}

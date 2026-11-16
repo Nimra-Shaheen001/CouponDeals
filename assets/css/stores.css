@@ -1,0 +1,996 @@
+
+/* =====================================================
+   COUPONFLICKER - ALL STORES PAGE
+   Premium A-Z Store Directory
+   Navy #14213D | Orange #FCA311
+===================================================== */
+
+.sdir-page {
+    --sdir-navy: #14213d;
+    --sdir-orange: #fca311;
+    --sdir-gold: #bd7f19;
+    --sdir-muted: #718096;
+    --sdir-border: #e8edf3;
+
+    font-family: "DM Sans", sans-serif;
+    background: #fff;
+    color: var(--sdir-navy);
+}
+
+.sdir-page *,
+.sdir-page *::before,
+.sdir-page *::after {
+    box-sizing: border-box;
+}
+
+.sdir-page a,
+.sdir-page a:hover {
+    text-decoration: none !important;
+}
+
+.sdir-page [hidden] {
+    display: none !important;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.sdir-hero {
+    padding: 22px 0 36px;
+    background: #fff;
+}
+
+.sdir-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 34px;
+    color: #8390a3;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.sdir-breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #56677d !important;
+}
+
+.sdir-breadcrumb a:hover {
+    color: var(--sdir-gold) !important;
+}
+
+.sdir-breadcrumb > i {
+    color: var(--sdir-gold);
+    font-size: 10px;
+}
+
+.sdir-breadcrumb span {
+    color: var(--sdir-navy);
+    font-weight: 800;
+}
+
+.sdir-hero-content {
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sdir-hero h1 {
+    margin: 0;
+    color: var(--sdir-navy);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(34px, 3.8vw, 53px);
+    font-weight: 900;
+    line-height: 1.18;
+    letter-spacing: -1.7px;
+}
+
+.sdir-hero h1 span {
+    color: #c18016;
+}
+
+.sdir-hero-content > p {
+    max-width: 710px;
+    margin: 17px auto 28px;
+    color: #69788b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   HERO SEARCH - CLEAN FOCUS
+========================================= */
+
+.sdir-page .sdir-search {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    max-width: 690px;
+    min-height: 56px;
+    margin: 0 auto;
+    padding: 0 19px;
+    border: 1px solid #e2e7ee;
+    border-radius: 999px;
+    outline: none;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(20,33,61,.05);
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+/* Only pill border on focus */
+.sdir-page .sdir-search:focus-within {
+    border-color: #e6b874;
+    box-shadow: 0 6px 22px rgba(20,33,61,.09);
+}
+
+.sdir-search > i {
+    flex-shrink: 0;
+    color: var(--sdir-gold);
+    font-size: 19px;
+}
+
+/* Remove square orange input outline */
+.sdir-page .sdir-search input,
+.sdir-page .sdir-search input:focus,
+.sdir-page .sdir-search input:focus-visible {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 54px;
+    margin: 0;
+    padding: 0;
+    border: 0 !important;
+    border-radius: 0;
+    outline: 0 !important;
+    outline-offset: 0;
+    background: transparent !important;
+    color: var(--sdir-navy);
+    font-family: inherit;
+    font-size: 13px;
+    box-shadow: none !important;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.sdir-search input::placeholder {
+    color: #8996a7;
+    opacity: 1;
+}
+
+.sdir-search input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+.sdir-search .sdir-clear-btn {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 29px;
+    height: 29px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #edf2f7;
+    color: var(--sdir-navy);
+    cursor: pointer;
+}
+
+.sdir-search .sdir-clear-btn:hover {
+    background: #fff0d9;
+}
+
+/* =========================================
+   A-Z LETTER TILES
+========================================= */
+
+.sdir-alphabet {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    gap: 20px 22px;
+    margin-top: 48px;
+}
+
+.sdir-letter-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 0;
+    min-height: 123px;
+    padding: 16px 8px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background: #e5e5e7;
+    color: var(--sdir-navy);
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
+}
+
+.sdir-letter-tile strong {
+    color: inherit;
+    font-family: "Manrope", sans-serif;
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.sdir-letter-tile span {
+    color: inherit;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sdir-letter-tile span b {
+    font-weight: 900;
+}
+
+.sdir-letter-tile:hover,
+.sdir-letter-tile.active {
+    transform: translateY(-3px);
+    border-color: #fca311;
+    background: var(--sdir-navy);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(20,33,61,.12);
+}
+
+.sdir-letter-tile:disabled {
+    opacity: .36;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.sdir-browse-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 44px;
+    color: #758297;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.sdir-browse-label i {
+    color: var(--sdir-gold);
+    font-size: 17px;
+}
+
+/* =========================================
+   DIRECTORY
+========================================= */
+
+.sdir-directory {
+    padding: 12px 0 65px;
+}
+
+.sdir-results-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.sdir-results-row > span {
+    color: #78869a;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.sdir-results-row button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 0;
+    border: 0;
+    background: transparent;
+    color: var(--sdir-gold);
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.sdir-results-row button:hover {
+    color: var(--sdir-navy);
+}
+
+/* =========================================
+   LETTER SECTIONS
+========================================= */
+
+.sdir-group {
+    padding: 53px 0 59px;
+    border-bottom: 1px solid #edf0f4;
+    scroll-margin-top: 100px;
+}
+
+.sdir-group:last-child {
+    border-bottom: 0;
+}
+
+.sdir-group-heading {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    margin-bottom: 38px;
+}
+
+.sdir-group-heading h2 {
+    margin: 0;
+    padding: 0 120px;
+    color: var(--sdir-navy);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(24px, 2.5vw, 32px);
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: -.8px;
+    text-align: center;
+}
+
+.sdir-view-more {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 0;
+    border: 0;
+    background: transparent;
+    color: var(--sdir-navy);
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.sdir-view-more:hover {
+    color: var(--sdir-gold);
+}
+
+.sdir-view-more i {
+    transition: transform .25s ease;
+}
+
+.sdir-view-more:hover i {
+    transform: translateX(3px);
+}
+
+/* =========================================
+   SIX FEATURED CIRCULAR LOGOS
+========================================= */
+
+.sdir-featured-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 41px;
+}
+
+.sdir-featured-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    color: var(--sdir-navy) !important;
+    text-align: center;
+}
+
+.sdir-featured-logo {
+    display: grid;
+    place-items: center;
+    width: min(100%, 158px);
+    aspect-ratio: 1;
+    padding: 34px;
+    overflow: hidden;
+    border: 1px solid #e8ebf0;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(20,33,61,.08);
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.sdir-featured-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sdir-featured-item:hover .sdir-featured-logo {
+    transform: translateY(-5px);
+    border-color: #efc582;
+    box-shadow: 0 14px 28px rgba(20,33,61,.13);
+}
+
+.sdir-featured-logo span {
+    color: var(--sdir-navy);
+    font-family: "Manrope", sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.sdir-featured-item > strong {
+    max-width: 100%;
+    color: var(--sdir-navy);
+    font-family: "Manrope", sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.sdir-featured-item > small {
+    color: var(--sdir-gold);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* =========================================
+   HORIZONTAL STORE CARDS
+========================================= */
+
+.sdir-small-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 24px;
+}
+
+.sdir-small-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+    min-height: 111px;
+    padding: 16px 19px;
+    border: 1px solid #e8e5ef;
+    border-radius: 18px;
+    background: #fff;
+    color: var(--sdir-navy) !important;
+    box-shadow: 0 7px 22px rgba(20,33,61,.065);
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.sdir-small-card:hover {
+    transform: translateY(-4px);
+    border-color: #efc58a;
+    box-shadow: 0 15px 29px rgba(20,33,61,.12);
+}
+
+.sdir-small-logo {
+    display: grid;
+    place-items: center;
+    flex: 0 0 73px;
+    width: 73px;
+    height: 73px;
+    padding: 16px;
+    overflow: hidden;
+    border: 1px solid #edf0f4;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 3px 11px rgba(20,33,61,.06);
+}
+
+.sdir-small-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sdir-small-logo span {
+    color: var(--sdir-navy);
+    font-size: 22px;
+    font-weight: 900;
+}
+
+/* Correct logo fallback visibility */
+.sdir-featured-logo img[hidden],
+.sdir-featured-logo span[hidden],
+.sdir-small-logo img[hidden],
+.sdir-small-logo span[hidden] {
+    display: none !important;
+}
+
+.sdir-small-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.sdir-small-info strong {
+    color: var(--sdir-navy);
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.sdir-small-info > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--sdir-gold);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* =========================================
+   NO RESULTS
+========================================= */
+
+.sdir-empty {
+    margin-top: 25px;
+    padding: 58px 20px;
+    border: 1px dashed #dce4ec;
+    border-radius: 18px;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.sdir-empty > i {
+    color: var(--sdir-gold);
+    font-size: 39px;
+}
+
+.sdir-empty h3 {
+    margin: 15px 0 8px;
+    color: var(--sdir-navy);
+    font-family: "Manrope", sans-serif;
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.sdir-empty p {
+    color: #728095;
+    font-size: 13px;
+}
+
+.sdir-empty button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 12px;
+    padding: 12px 21px;
+    border: 0;
+    border-radius: 30px;
+    background: var(--sdir-navy);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* =========================================
+   BOTTOM CTA - TWO BUTTONS
+========================================= */
+
+.sdir-bottom-cta {
+    padding: 22px 0 72px;
+    background: #fff;
+}
+
+.sdir-cta-inner {
+    position: relative;
+    overflow: hidden;
+    padding: 49px 25px;
+    border-radius: 22px;
+    background:
+        radial-gradient(
+            circle at 93% 10%,
+            rgba(252,163,17,.12),
+            transparent 36%
+        ),
+        linear-gradient(115deg, #14213d, #254365);
+    text-align: center;
+}
+
+.sdir-cta-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    color: #ffd087;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+.sdir-cta-inner h2 {
+    margin: 0;
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(28px, 3.2vw, 42px);
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.sdir-cta-inner h2 span {
+    color: var(--sdir-orange);
+}
+
+.sdir-cta-inner > p {
+    max-width: 630px;
+    margin: 16px auto 26px;
+    color: #d4deea;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.sdir-cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sdir-cta-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 22px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 900;
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.sdir-cta-primary {
+    background: var(--sdir-orange);
+    color: var(--sdir-navy) !important;
+}
+
+.sdir-cta-primary:hover {
+    transform: translateY(-3px);
+    background: #ffd089;
+    color: var(--sdir-navy) !important;
+}
+
+.sdir-cta-secondary {
+    border-color: rgba(255,255,255,.37) !important;
+    background: rgba(255,255,255,.08);
+    color: #fff !important;
+}
+
+.sdir-cta-secondary:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,.17);
+    color: #fff !important;
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1199px) {
+
+    .sdir-alphabet {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .sdir-featured-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 29px;
+    }
+
+    .sdir-featured-logo {
+        width: 145px;
+        padding: 30px;
+    }
+
+    .sdir-small-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .sdir-hero {
+        padding: 18px 0 28px;
+    }
+
+    .sdir-breadcrumb {
+        margin-bottom: 28px;
+    }
+
+    .sdir-hero h1 {
+        font-size: clamp(30px, 7vw, 38px);
+        letter-spacing: -1.1px;
+    }
+
+    .sdir-hero-content > p {
+        margin: 14px auto 22px;
+        font-size: 13px;
+    }
+
+    .sdir-page .sdir-search {
+        max-width: 100%;
+        min-height: 52px;
+        padding: 0 15px;
+        gap: 10px;
+    }
+
+    .sdir-page .sdir-search input {
+        height: 50px;
+        font-size: 12px;
+    }
+
+    .sdir-alphabet {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 31px;
+    }
+
+    .sdir-letter-tile {
+        min-height: 91px;
+        padding: 12px 5px;
+        border-radius: 11px;
+    }
+
+    .sdir-letter-tile strong {
+        font-size: 27px;
+    }
+
+    .sdir-letter-tile span {
+        font-size: 10px;
+    }
+
+    .sdir-browse-label {
+        margin-top: 29px;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .sdir-group {
+        padding: 38px 0 44px;
+    }
+
+    .sdir-group-heading {
+        justify-content: space-between;
+        margin-bottom: 27px;
+    }
+
+    .sdir-group-heading h2 {
+        padding: 0;
+        font-size: 22px;
+        text-align: left;
+    }
+
+    .sdir-view-more {
+        position: static;
+        transform: none;
+        font-size: 11px;
+    }
+
+    .sdir-featured-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 21px 12px;
+        margin-bottom: 28px;
+    }
+
+    .sdir-featured-logo {
+        width: min(100%, 109px);
+        padding: 23px;
+    }
+
+    .sdir-featured-item strong {
+        font-size: 12px;
+    }
+
+    .sdir-featured-item small {
+        font-size: 10px;
+    }
+
+    .sdir-small-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .sdir-small-card {
+        min-height: 92px;
+        padding: 13px 15px;
+    }
+
+    .sdir-small-logo {
+        flex-basis: 60px;
+        width: 60px;
+        height: 60px;
+        padding: 12px;
+    }
+
+    .sdir-small-info strong {
+        font-size: 15px;
+    }
+
+    .sdir-cta-inner {
+        padding: 39px 20px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+    .sdir-alphabet {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .sdir-group-heading h2 {
+        font-size: 19px;
+    }
+
+    .sdir-featured-logo {
+        width: min(100%, 94px);
+        padding: 19px;
+    }
+
+    .sdir-cta-actions {
+        flex-direction: column;
+    }
+
+    .sdir-cta-actions a {
+        width: 100%;
+        max-width: 275px;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.sdir-page button:focus-visible,
+.sdir-page a:focus-visible {
+    outline: 3px solid var(--sdir-orange);
+    outline-offset: 3px;
+}
+
+/*
+ * For the search field, the parent pill
+ * provides the visible focus indicator.
+ */
+.sdir-page .sdir-search input:focus-visible {
+    outline: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sdir-page *,
+    .sdir-page *::before,
+    .sdir-page *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* ============================================
+   COUPONFLICKER - PREMIUM SCROLL ANIMATIONS
+============================================ */
+
+/* Smooth anchor navigation */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.sdir-group {
+    scroll-margin-top: 100px;
+}
+
+/* Animation only after JS initializes */
+
+.sdir-page.sdir-motion-ready .sdir-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity .8s cubic-bezier(.2,.7,.2,1),
+        transform .8s cubic-bezier(.2,.7,.2,1);
+    transition-delay: var(--sdir-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+/* Visible state */
+
+.sdir-page.sdir-motion-ready .sdir-animate.sdir-visible {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+}
+
+/* Brand logo entrance */
+
+.sdir-page.sdir-motion-ready .sdir-featured-item.sdir-animate {
+    transform: translateY(24px) scale(.95);
+}
+
+.sdir-page.sdir-motion-ready .sdir-featured-item.sdir-visible {
+    transform: translateY(0) scale(1);
+}
+
+/* Horizontal store card entrance */
+
+.sdir-page.sdir-motion-ready .sdir-small-card.sdir-animate {
+    transform: translateY(35px);
+}
+
+.sdir-page.sdir-motion-ready .sdir-small-card.sdir-visible {
+    transform: translateY(0);
+}
+
+/* Hover still works */
+
+.sdir-featured-item:hover .sdir-featured-logo {
+    transform: translateY(-5px) scale(1.04);
+}
+
+.sdir-small-card.sdir-visible:hover {
+    transform: translateY(-4px);
+}
+
+/* Responsive animation adjustments */
+
+@media (max-width: 767px) {
+    .sdir-page.sdir-motion-ready .sdir-animate {
+        transform: translateY(18px);
+        transition-duration: .65s;
+    }
+
+    .sdir-page.sdir-motion-ready .sdir-featured-item.sdir-animate {
+        transform: translateY(18px) scale(.97);
+    }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    .sdir-page .sdir-animate {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        will-change: auto !important;
+    }
+}
